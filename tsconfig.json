@@ -1,6 +1,43 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "target": "esnext", // La version ECMAScript cible
+    "module": "esnext", // Le module de type de sortie
+    "lib": [
+      "esnext",
+      "dom"
+    ], // Les bibliothèques à inclure
+    "jsx": "react-native", // Le support JSX pour React Native
+    "strict": true, // Active le mode strict
+    "esModuleInterop": true, // Active l'interopérabilité entre CommonJS et ES Modules
+    "skipLibCheck": true, // Ignore les erreurs de type dans les fichiers de définition de bibliothèque
+    "forceConsistentCasingInFileNames": true, // Force la cohérence de la casse dans les noms de fichiers
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["react-native", "jest"],
+    "typeRoots": ["./types"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ],
+  "include": [
+    "src",
+    "declarations.d.ts",
+    "nativewind-env.d.ts",
+    "App.tsx",
+    "types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
